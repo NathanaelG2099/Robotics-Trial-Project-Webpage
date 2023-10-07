@@ -2,6 +2,8 @@ import Header from "./components/Header";
 import Speed from "./components/Speed";
 import Angle from "./components/Angle";
 import Status from "./components/Status";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -46,22 +48,32 @@ function App() {
 
 
   return (
-    <div className="container">
-      <Header />
-      <Speed 
-        min={0}
-        max={100}
-        step={1}
-        onUpdate = {fetchSpeedStatus}
-      />
-      <Angle 
-        min={-90}
-        max={90}
-        step={1}
-        onUpdate = {fetchAngleStatus}
-      />
-      <Status body={status.text}/>
-    </div>
+    <Container maxWidth="sm">
+      <Grid container spacing ={2}>
+        <Grid item xs = {8}>
+          <Header />
+        </Grid>
+        <Grid item xs = {5}>
+          <Speed 
+            min={0}
+            max={100}
+            step={1}
+            onUpdate = {fetchSpeedStatus}
+          />
+        </Grid>
+        <Grid item xs = {5}>
+          <Angle 
+            min={-90}
+            max={90}
+            step={1}
+            onUpdate = {fetchAngleStatus}
+          />
+        </Grid>
+        <Grid item xs = {8}>
+          <Status body={status.text}/>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 

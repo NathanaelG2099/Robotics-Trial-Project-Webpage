@@ -18,7 +18,7 @@ const Slider = (props) => {
     <>
         <div>
             <input 
-            className="range-value"
+            className="slider"
             type="range"
             step={step}
             min={min}
@@ -27,9 +27,7 @@ const Slider = (props) => {
             onChange={handleChange(max)}
             />
             <span className="range-slider-value">{value}</span>
-            <div className="range-min-max">
-                <span>{min}</span><span>{max}</span>
-            </div>
+            
         </div>
     </>
     

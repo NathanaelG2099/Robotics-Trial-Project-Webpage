@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Slider from "./Slider"
+import Button from "@mui/material/Button"
 
 
 const Angle = (props) => {
@@ -34,9 +35,10 @@ const Angle = (props) => {
             <input type='number' 
             placeholder="0"
             value= {angleValue}
+            //Limit angle value
             onChange={(e) => setAngleValue(e.target.value)}
             />
-            <button type="submit" value="submit" className="btn submit-btn">Submit</button>
+            <Button variant="contained" type="submit" value="submit" className="btn submit-btn">Submit</Button>
         </div>
     </form>
   )
